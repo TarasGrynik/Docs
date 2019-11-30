@@ -12,3 +12,7 @@ const inputs = document.querySelectorAll('.choose__form-label input');
 
 // function for paste path for img in php files
 <?= SITE_TEMPLATE_PATH ?>  
+
+
+// js and css for styling custom option tag
+
