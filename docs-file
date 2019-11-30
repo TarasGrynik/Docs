@@ -1,1 +1,14 @@
 
+const inputs = document.querySelectorAll('.choose__form-label input');
+
+// фукція для проходження по усім елементам нод ліста і з ними щось зробити es6
+[...nodeList].forEach($coin => $coin.addEventListener('focus', handleInputStart));
+
+
+// аналогічний але кросбраузерний варіант з чистим js
+ [].forEach.call(nodeList, function(el) {
+     el.addEventListener('focus', handleInputStart);
+ });
+
+// function for paste path for img in php files
+<?= SITE_TEMPLATE_PATH ?>  
