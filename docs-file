@@ -207,3 +207,19 @@ $(document).ready(function () {
     });
   });
 });
+
+
+// function for set and save cookie with jquery
+//!!!!!! must be jquery cookie !!!!!!!!!
+// Download and include this: https://github.com/carhartl/jquery-cookie
+$(document).ready(function() {
+  var cookieshowhide = $.cookie('SOME-COOKIE');
+  if(cookieshowhide == 1) {
+     $(".cookiealert").hide();                     // елемент який ми видаляємо
+	}
+  
+  $('.closecookiewarning').click(function(){       // кнопка по якій ми клікаємо
+  	$.cookie("SOME-COOKIE", 1, { expires : 1000 });
+   	$(".cookiealert").hide();                      // елемент який ми видаляємо
+  })
+})
