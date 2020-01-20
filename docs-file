@@ -223,3 +223,45 @@ $(document).ready(function() {
    	$(".cookiealert").hide();                      // елемент який ми видаляємо
   })
 })
+
+
+
+// вирішення проблеми несумісності summernote (textarea iditor) і jQuery validation
+var v = $('#myForm').validate({
+  // Ignore all hidden elements except your `textarea` element. Also, you have to
+  // ignore the div that `Summernote` uses to hold your entered data (which is also a
+  // content editable div with no name) because this plugin will try to check it on blur.
+  // and because it has no name, the error shown in your capture will pop up (the
+  // `escapeCssMeta` method escapes the name/id of an element, and in this case
+  // an undefined value was passed to it, hence the error message).
+  //
+  // The div has the following class `.note-editable .panel-body` that we can use to
+  // exclude it from validation
+  ignore: ":hidden:not(#summernote),.note-editable.panel-body"
+});
+
+var myElement = $('#summernote');
+
+myElement.summernote({
+  // See: http://summernote.org/deep-dive/
+  callbacks: {
+    // Register the `onChnage` callback in order to listen to the changes of the
+    // Summernote editor. You can also use the event `summernote.change` to handle
+    // the change event as follow:
+    //   myElement.summernote()
+    //     .on("summernote.change", function(event, contents, $editable) {
+    //       // ...
+    //     });
+    onChange: function(contents, $editable) {
+      // Note that at this point, the value of the `textarea` is not the same as the one
+      // you entered into the summernote editor, so you have to set it yourself to make
+      // the validation consistent and in sync with the value.
+      myElement.val(myElement.summernote('isEmpty') ? "" : contents);
+
+      // You should re-validate your element after change, because the plugin will have
+      // no way to know that the value of your `textarea` has been changed if the change
+      // was done programmatically.
+      v.element(myElement);
+    }
+  }
+});
