@@ -286,3 +286,13 @@ $('.show-more').on('click', function() {
   //change text of show more element just for demonstration purposes to this demo
   $(this).text() === 'Show more' ? $(this).text('Show less') : $(this).text('Show more');
 });
+
+
+// проблема вирішення select2 та jquery validation (коли вибираєш в тезі селект не пропажає обовязкове поле, а цей код відслідковує зміну тегу селект )
+  if (formCreateResume) {
+    $(document).on("change", ".select2-hidden-accessible", function (e) {
+      if (!$.isEmptyObject(formCreateResume.submitted)) {
+        formCreateResume.form();
+      }
+    });
+  }
