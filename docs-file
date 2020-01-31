@@ -296,3 +296,6 @@ $('.show-more').on('click', function() {
       }
     });
   }
+
+// очищати поле інтуп при фокусі і при втраті фокуса коли поле пусте вертати плейсхолдер
+<input type="text"class="u-input-style" id="search" name="search" placeholder="Поиск" onfo cus="this.placeholder = ''" onb lur="this.placeholder = 'Поиск'">
