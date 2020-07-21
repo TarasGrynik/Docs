@@ -331,3 +331,15 @@ body {
 	flex: 0 0 auto;
 }
 
+
+// функція акардіон для випадалок
+if($(this).closest(для батька).hasClass("active")) {
+    $(this).closest(для батька).find(сабліст).slideUp();
+    $(this).closest(для батька).removeClass("active");
+  } else {
+    $(для батька).removeClass("active");
+    $(для батька).find(сабліст).slideUp();
+    $(this).closest(для батька).addClass("active");
+    $(this).closest(для батька).find(сабліст).slideDown();
+  }
+
