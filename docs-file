@@ -20,6 +20,9 @@
 }
 
 
+// для кодування коду в теги pre code 
+https://www.web2generators.com/html-based-tools/online-html-entities-encoder-and-decoder
+
 
 const inputs = document.querySelectorAll('.choose__form-label input');
 
