@@ -19,6 +19,9 @@
   to { -webkit-transform: rotate(360deg); }
 }
 
+// респонсів бібліотека для графіків
+https://www.highcharts.com/
+
 
 // для кодування коду в теги pre code 
 https://www.web2generators.com/html-based-tools/online-html-entities-encoder-and-decoder
