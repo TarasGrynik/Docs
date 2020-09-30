@@ -371,3 +371,10 @@ if($(this).closest(для батька).hasClass("active")) {
     $(this).closest(для батька).find(сабліст).slideDown();
   }
 
+
+
+
+// скріпт який провіряє чи карта повністю загрузилась
+new google.maps.event.addListenerOnce(map, 'idle', function(){
+    // do something only the first time the map is loaded
+});
